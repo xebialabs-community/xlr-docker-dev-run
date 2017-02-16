@@ -5,7 +5,8 @@ After compilation it starts XLR and links the `ext` folder to your plugin.
 
 # Supported tags #
 
-* `latest`, `v6.0.0.1`
+* `latest`, `v6.1.0.1`
+* `v6.0.0.1`
 * `v5.0.1.11`
 
 # Starting #
