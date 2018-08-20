@@ -11,7 +11,8 @@ After compilation it starts XLR and links the `ext` folder to your plugin.
 
 # Supported tags #
 
-+ `latest`, `v8.0.0.2`
++ `latest`, `8.1.0`
++ `v8.0.0.2`
 + `v7.5.0.1`
 + `v7.2.0.1`
 + `v7.1.0.1`
@@ -22,7 +23,7 @@ After compilation it starts XLR and links the `ext` folder to your plugin.
 # Starting #
 
 ```
-docker run -p 5516:5516 -v [PROJECT_DIR]/myproject:/data -v /home/username/xl-licenses:/license -v /home/username/.xlgradle:/root/.gradle xebialabs/xlr_dev_run
+docker run -p 5516:5516 -v [PROJECT_DIR]/myproject:/data -v /home/username/xl-licenses:/license -v /home/username/.xlgradle:/root/.gradle xebialabsunsupported/xlr_dev_run
 ```
 
 where:
