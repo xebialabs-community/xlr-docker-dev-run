@@ -8,6 +8,9 @@ fi
 # Copy to plugins
 cp /data/build/libs/*.jar /opt/xl-release-server/default-plugins/__local__
 
+# Link the license
+ln -s /license/xl-release-license.lic /opt/xl-release-server/default-conf/xl-release-license.lic
+
 # Link `ext` folder
 find /data/src/main/resources -maxdepth 1 -mindepth 1 -type d -exec ln -s -f '{}' /opt/xl-release-server/ext/ \;
 
