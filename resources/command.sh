@@ -2,11 +2,11 @@
 
 # Copy downloads into 'plugins'
 if [ -d "/data/build/downloads/plugins" ]; then
-    cp /data/build/downloads/plugins/* /opt/xl-release-server/plugins/__local__
+    cp /data/build/downloads/plugins/* /opt/xl-release-server/default-plugins/__local__
 fi
 
 # Copy to plugins
-cp /data/build/libs/*.jar /opt/xl-release-server/plugins/__local__
+cp /data/build/libs/*.jar /opt/xl-release-server/default-plugins/__local__
 
 # Link `ext` folder
 find /data/src/main/resources -maxdepth 1 -mindepth 1 -type d -exec ln -s -f '{}' /opt/xl-release-server/ext/ \;
