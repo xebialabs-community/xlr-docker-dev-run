@@ -9,5 +9,10 @@ image_name="xebialabsunsupported/xlr_dev_run"
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 while read tag ; do
     docker build -t $image_name:$tag --build-arg xlr_tag=$tag .
+    echo "####################################################################"
+    echo "####        $image_name:$tag built"
+    docker push $image_name:$tag
+    echo "####        $image_name:$tag pushed"
+    echo "####################################################################"
     docker push $image_name:$tag
 done < <(comm -23 <(sort /tmp/xlr_dev_compile) <(sort /tmp/xlr_dev_run))
