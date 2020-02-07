@@ -12,7 +12,7 @@ http --follow https://gist.githubusercontent.com/jdewinne/3f13494858fad8b6b2b88e
 chmod +x dockertags
 
 image_name="xebialabsunsupported/xlr_dev_run"
-./dockertags -i xebialabs/xl-release -e "(centos|amazonlinux)$" > /tmp/xlr
+./dockertags -i xebialabs/xl-release -e "(centos|amazonlinux|debian-slim)$" > /tmp/xlr
 ./dockertags -i $image_name > /tmp/xl
 echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
 while read tag ; do
