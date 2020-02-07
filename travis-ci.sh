@@ -13,7 +13,7 @@ chmod +x dockertags
 
 image_name="xebialabsunsupported/xlr_dev_run"
 ./dockertags -i xebialabs/xl-release -e "(centos|amazonlinux)$" > /tmp/xlr
-./dockertags -i $image_name > /tmp/xlr_dev_run
+./dockertags -i $image_name > /tmp/xl
 echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
 while read tag ; do
     echo "####################################################################"
@@ -24,4 +24,4 @@ while read tag ; do
     echo "####        $image_name:$tag pushed"
     echo "####################################################################"
     docker push $image_name:$tag
-done < <(comm -23 <(sort /tmp/xlr) <(sort /tmp/xlr_dev_run))
+done < <(comm -23 <(sort /tmp/xlr) <(sort /tmp/xl))
