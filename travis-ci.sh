@@ -16,8 +16,9 @@ image_name="xebialabsunsupported/xlr_dev_run"
 ./dockertags -i $image_name > /tmp/xlr_dev_run
 echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
 while read tag ; do
-    docker build -t $image_name:$tag --build-arg xlr_tag=$tag .
     echo "####################################################################"
+    echo "####        $image_name:$tag builing"
+    docker build -t $image_name:$tag --build-arg xlr_tag=$tag .
     echo "####        $image_name:$tag built"
     docker push $image_name:$tag
     echo "####        $image_name:$tag pushed"
