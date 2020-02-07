@@ -14,7 +14,7 @@ chmod +x dockertags
 image_name="xebialabsunsupported/xlr_dev_run"
 ./dockertags -i xebialabsunsupported/xlr_dev_compile > /tmp/xlr_dev_compile
 ./dockertags -i $image_name > /tmp/xlr_dev_run
-echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
 while read tag ; do
     docker build -t $image_name:$tag --build-arg xlr_tag=$tag .
     echo "####################################################################"
