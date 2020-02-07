@@ -23,4 +23,4 @@ while read tag ; do
     echo "####        $image_name:$tag pushed"
     echo "####################################################################"
     docker push $image_name:$tag
-done < <(comm -23 <(sort /tmp/xlr_dev_compile) <(sort /tmp/xlr_dev_run))
+done < <(comm -23 <(sort /tmp/xlr_dev_run) <(sort /tmp/xlr_dev_run))
