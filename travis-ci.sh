@@ -20,7 +20,7 @@ while read tag ; do
     echo "####        $image_name:$tag builing"
     docker build -t $image_name:$tag --build-arg xlr_tag=$tag .
     echo "####        $image_name:$tag built"
-    #docker push $image_name:$tag
+    docker push $image_name:$tag
     echo "####        $image_name:$tag pushed"
     echo "####################################################################"
     docker push $image_name:$tag
